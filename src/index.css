@@ -62,3 +62,29 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #404040;
 }
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flight-card-enter {
+  opacity: 0;
+  animation: cardEnter 0.4s ease forwards;
+}
+
+@keyframes shimmer {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
