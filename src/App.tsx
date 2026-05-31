@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
+import { ErrorBoundary } from './components/ui/ErrorBoundary'
 import ProtectedRoute from './components/ui/ProtectedRoute'
 import RootLayout from './components/layout/RootLayout'
 
@@ -31,35 +32,37 @@ const queryClient = new QueryClient({
 
 export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          {/* Public routes */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            {/* Public routes */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
 
-          {/* Protected routes */}
-          <Route element={<ProtectedRoute />}>
-            <Route element={<RootLayout />}>
-              <Route index element={<Navigate to="/search" replace />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/inspire" element={<InspirePage />} />
-              <Route path="/planner" element={<PlannerPage />} />
-              <Route path="/itineraries" element={<ItinerariesPage />} />
-              <Route path="/routes" element={<RoutePage />} />
-              <Route path="/multi-city" element={<MultiCityPage />} />
-              <Route path="/carbon" element={<CarbonPage />} />
-              <Route path="/alerts" element={<AlertsPage />} />
-              <Route path="/saved-searches" element={<SavedSearchesPage />} />
-              <Route path="/analytics" element={<AnalyticsPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/admin" element={<AdminPage />} />
+            {/* Protected routes */}
+            <Route element={<ProtectedRoute />}>
+              <Route element={<RootLayout />}>
+                <Route index element={<Navigate to="/search" replace />} />
+                <Route path="/search" element={<SearchPage />} />
+                <Route path="/inspire" element={<InspirePage />} />
+                <Route path="/planner" element={<PlannerPage />} />
+                <Route path="/itineraries" element={<ItinerariesPage />} />
+                <Route path="/routes" element={<RoutePage />} />
+                <Route path="/multi-city" element={<MultiCityPage />} />
+                <Route path="/carbon" element={<CarbonPage />} />
+                <Route path="/alerts" element={<AlertsPage />} />
+                <Route path="/saved-searches" element={<SavedSearchesPage />} />
+                <Route path="/analytics" element={<AnalyticsPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/admin" element={<AdminPage />} />
+              </Route>
             </Route>
-          </Route>
 
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </BrowserRouter>
-    </QueryClientProvider>
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </ErrorBoundary>
   )
 }
