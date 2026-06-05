@@ -52,7 +52,6 @@ function RevealText({ text }: { text: string }) {
   const indexRef = useRef(0);
 
   useEffect(() => {
-    setDisplayed("");
     indexRef.current = 0;
     const interval = setInterval(() => {
       if (indexRef.current >= text.length) {
