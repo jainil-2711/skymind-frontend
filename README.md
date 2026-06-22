@@ -1,23 +1,24 @@
-# SkyMind — Frontend
+# SkyMind ï¿½ Frontend
 
 ![Frontend CI](https://github.com/jainil-2711/skymind-frontend/actions/workflows/frontend.yml/badge.svg)
 
-AI-powered flight intelligence platform — React/TypeScript frontend.
+AI-powered flight intelligence platform ï¿½ React/TypeScript frontend.
 
 ## Live Demo
 
-https://skymind-frontend.vercel.app
+https://skymind-frontend.vercel.app  
+**Backend:** https://github.com/jainil-2711/skymind-backend
 
 ## Architecture
 
 \\\
 src/
-+-- pages/          # 15 pages — auth, search, planner, analytics, admin
++-- pages/          # 15 pages ï¿½ auth, search, planner, analytics, admin
 +-- components/
-¦   +-- layout/     # Sidebar, Topbar, RootLayout
-¦   +-- ui/         # FlightCard, DestinationRow, ErrorBoundary, ProtectedRoute
-+-- stores/         # Zustand — auth state, JWT tokens, persist to localStorage
-+-- lib/            # Axios instance — JWT interceptor + auto-refresh on 401
+ï¿½   +-- layout/     # Sidebar, Topbar, RootLayout
+ï¿½   +-- ui/         # FlightCard, DestinationRow, ErrorBoundary, ProtectedRoute
++-- stores/         # Zustand ï¿½ auth state, JWT tokens, persist to localStorage
++-- lib/            # Axios instance ï¿½ JWT interceptor + auto-refresh on 401
 +-- types/          # TypeScript interfaces for all API responses
 +-- data/           # 47 IATA airport codes
 \\\
@@ -36,7 +37,7 @@ src/
 
 ## Design System
 
-Black and white minimalist — Linear/Vercel aesthetic.
+Black and white minimalist ï¿½ Linear/Vercel aesthetic.
 
 | Token | Value |
 |-------|-------|
@@ -59,7 +60,7 @@ cp .env.example .env
 npm install && npm run dev
 \\\
 
-App at http://localhost:5173 — requires backend running at VITE_API_URL.
+App at http://localhost:5173 ï¿½ requires backend running at VITE_API_URL.
 
 ## Environment Variables
 
@@ -85,7 +86,7 @@ App at http://localhost:5173 — requires backend running at VITE_API_URL.
 | Saved Searches | /saved-searches | GET/DELETE /saved-searches |
 | Profile | /profile | GET/PUT /users/me |
 | Admin | /admin | GET /admin/* |
-| 404 | * | — |
+| 404 | * | ï¿½ |
 
 ## Scripts
 
